@@ -10,15 +10,17 @@ COPY . .
 # in this step the static React files are created. For more info see package.json
 RUN chmod +x node_modules/.bin/react-scripts
 RUN npm run build
+EXPOSE 8080
+CMD npm start
 
-FROM nginx:alpine
+#FROM nginx:alpine
 
 # copy the .conf template
-COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
+#COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
 
 ## Remove default nginx index page and replace it with the static files we created in the first step
-RUN rm -rf /usr/share/nginx/html/*
-COPY --from=builder /app-ui/build /usr/share/nginx/html
-EXPOSE 8080
+#RUN rm -rf /usr/share/nginx/html/*
+#COPY --from=builder /app-ui/build /usr/share/nginx/html
+#EXPOSE 8080
 
-CMD nginx -g 'daemon off;'
+#CMD nginx -g 'daemon off;'
