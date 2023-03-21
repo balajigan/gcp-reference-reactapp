@@ -8,6 +8,7 @@ RUN mv ./node_modules ./app-ui
 WORKDIR /app-ui
 COPY . .
 # in this step the static React files are created. For more info see package.json
+RUN chmod +x node_modules/.bin/react-scripts
 RUN npm run build
 
 FROM nginx:alpine
