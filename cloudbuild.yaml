@@ -11,7 +11,7 @@ steps:
   args:
   - 'run'
   - 'deploy'
-  - 'fastapi'
+  - 'reactapp'
   - '--image'
   - 'gcr.io/$PROJECT_ID/gcp-reference-reactapp'
   - '--region'
