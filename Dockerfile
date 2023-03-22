@@ -11,7 +11,7 @@ COPY . .
 RUN chmod +x node_modules/.bin/react-scripts
 RUN npm run build
 EXPOSE 8080
-CMD npm start
+CMD ["npm", "run", "dev"]
 
 #FROM nginx:alpine
 
