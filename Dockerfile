@@ -11,6 +11,7 @@ COPY . .
 RUN chmod +x node_modules/.bin/react-scripts
 RUN npm run build
 EXPOSE 8080
+RUN npm install react-scripts@2.1.8
 CMD ["npm", "start"]
 
 #FROM nginx:alpine
